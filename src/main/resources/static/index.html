@@ -5,7 +5,25 @@
     <title>Baza produktów</title>
 </head>
 <body>
+<h2>Produkty</h2>
 
+<a href="/list">Lista wszystkich produktów</a><br>
+<a href="/list/category">Produkty spożywcze</a><br>
+<a href="/list/category">Artykuły gospodarstwa domowego</a><br>
+<a href="/list/category">Pozostałe</a><br>
 
+<h2>Dodaj produkt</h2>
+
+<form action="/list/add" method="post">
+    <input type="text" name="name" placeholder="Nazwa produktu">
+    <input type="text" name="price" placeholder="Cena"><br>
+    <label for="category">Wybierz kategorię</label><br>
+    <select name="category" id="category">
+        <option value="art. spożywcze">art. spożywcze</option>
+        <option value="art. gosp. domowego">art. gosp. domowego</option>
+        <option value="inne">inne</option>
+    </select><br>
+    <input type="submit" value="Dodaj">
+</form>
 </body>
 </html>
