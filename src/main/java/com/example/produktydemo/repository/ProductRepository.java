@@ -34,7 +34,6 @@ public class ProductRepository {
     }
 
     public void add(String name, BigDecimal price, ProductCategory category) {
-        List<Product> products = getAll();
         products.add(new Product(name, price, category));
     }
 
