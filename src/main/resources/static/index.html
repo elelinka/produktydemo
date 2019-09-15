@@ -8,13 +8,13 @@
 <h2>Produkty</h2>
 
 <a href="/list">Lista wszystkich produktów</a><br>
-<a href="/list/category">Produkty spożywcze</a><br>
-<a href="/list/category">Artykuły gospodarstwa domowego</a><br>
-<a href="/list/category">Pozostałe</a><br>
+<a href="/list?category=art. spożywcze">art. spożywcze</a><br>
+<a href="/list?category=art. gosp. domowego">art. gosp. domowego</a><br>
+<a href="/list?category=inne">inne</a><br>
 
 <h2>Dodaj produkt</h2>
 
-<form action="/list/add" method="post">
+<form action="/add" method="post">
     <input type="text" name="name" placeholder="Nazwa produktu">
     <input type="text" name="price" placeholder="Cena"><br>
     <label for="category">Wybierz kategorię</label><br>

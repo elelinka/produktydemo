@@ -36,4 +36,12 @@ public class ProductRepository {
         products.add(new Product(name, price, category));
     }
 
+    public BigDecimal sumPrice(List<Product> products) {
+        BigDecimal result = new BigDecimal("0");
+        for (Product product : products) {
+            result = result.add(product.getPrice());
+        }
+        return result;
+    }
+
 }
