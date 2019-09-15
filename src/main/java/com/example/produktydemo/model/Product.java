@@ -1,13 +1,15 @@
 package com.example.produktydemo.model;
 
+import com.example.produktydemo.model.category.ProductCategory;
+
 import java.math.BigDecimal;
 
 public class Product {
     private String name;
     private BigDecimal price;
-    private String category;
+    private ProductCategory category;
 
-    public Product(String name, BigDecimal price, String category) {
+    public Product(String name, BigDecimal price, ProductCategory category) {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -29,16 +31,16 @@ public class Product {
         this.price = price;
     }
 
-    public String getCategory() {
+    public ProductCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(ProductCategory category) {
         this.category = category;
     }
 
     @Override
     public String toString() {
-        return "name: " + name + ", price: " + price + ", category: " + category;
+        return "name: " + name + ", price: " + price + ", category: " + category.getName();
     }
 }

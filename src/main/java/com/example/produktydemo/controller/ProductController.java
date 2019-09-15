@@ -1,6 +1,7 @@
 package com.example.produktydemo.controller;
 
 import com.example.produktydemo.model.Product;
+import com.example.produktydemo.model.category.ProductCategory;
 import com.example.produktydemo.repository.ProductRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -23,7 +24,7 @@ public class ProductController {
 
     @ResponseBody
     @GetMapping("/list")
-    public String getAll(@RequestParam(required = false) String category) {
+    public String getAll(@RequestParam(required = false) ProductCategory category) {
         List<Product> products;
 
         if (StringUtils.isEmpty(category)) {
@@ -37,7 +38,7 @@ public class ProductController {
     @PostMapping("/add")
     public String add(@RequestParam(value = "name") String name,
                       @RequestParam("price") BigDecimal price,
-                      @RequestParam(value = "category") String category) {
+                      @RequestParam(value = "category") ProductCategory category) {
         if (isParamsOk(name, price, category)) {
             return "redirect:/err";
         } else {
@@ -56,7 +57,7 @@ public class ProductController {
         return result;
     }
 
-    private boolean isParamsOk(String name, BigDecimal price, String category) {
+    private boolean isParamsOk(String name, BigDecimal price, ProductCategory category) {
         return StringUtils.isEmpty(name) || StringUtils.isEmpty(price) || StringUtils.isEmpty(category);
     }
 
